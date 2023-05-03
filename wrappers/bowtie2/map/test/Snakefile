@@ -1,0 +1,21 @@
+rule bowtie2__map_reads_to_reference:
+    input:
+        reads=["read_R1.fastq.gz", "read_R2.fastq.gz"],
+        idx=multiext(
+            "bowtie2_index/genome",
+            ".1.bt2",
+            ".2.bt2",
+            ".3.bt2",
+            ".4.bt2",
+            ".rev.1.bt2",
+            ".rev.2.bt2",
+        ),
+    output:
+        bam="mapping.bam",
+    params:
+        prefix=lambda wildcards, input: input.idx[0][: -len(".1.bt2")],
+    threads: 2
+    log:
+        "logs/bowtie2__map_reads_to_reference.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bowtie2/map"
