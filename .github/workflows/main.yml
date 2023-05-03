@@ -1,0 +1,57 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  Formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Formatting
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_SNAKEMAKE_SNAKEFMT: true
+
+  Testing:
+    runs-on: ubuntu-latest
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files in the wrappers folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v35
+        with:
+          files: wrappers/**
+
+      # proceed only if something in wrappers changed
+      - name: Install mamba
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: snakemake
+          channels: "conda-forge, bioconda"
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+
+      - name: Install Snakemake
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        shell: bash -el {0}
+        run: |
+          conda config --set channel_priority strict
+          mamba install -n snakemake -y snakemake-minimal
+
+      - name: Run tests
+        shell: bash -el {0}
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          conda activate snakemake && python tester.py ${{ steps.changed-files-specific.outputs.all_changed_files }}
