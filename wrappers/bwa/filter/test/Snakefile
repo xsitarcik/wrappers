@@ -1,0 +1,17 @@
+rule bwa__filter_reads_from_reference:
+    input:
+        r1="test_sample_R1.fastq.gz",
+        r2="test_sample_R2.fastq.gz",
+        index=multiext("bwa_index/ref", ".amb", ".ann", ".bwt", ".pac", ".sa"),
+    output:
+        r1="filtered/test_sample_R1.fastq.gz",
+        r2="filtered/test_sample_R2.fastq.gz",
+    params:
+        indices=["bwa_index/ref"],
+        keep_param="-F 2",
+        sample=lambda w, input: os.path.basename(input.r1).replace("_R1.fastq.gz", ""),
+    threads: 2
+    log:
+        "logs/bwa__filter_reads_from_reference.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bwa/filter"

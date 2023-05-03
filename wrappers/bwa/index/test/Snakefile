@@ -1,0 +1,12 @@
+rule bwa__build_index:
+    input:
+        "ref.fa",
+    output:
+        idx=multiext("bwa_index/ref", ".amb", ".ann", ".bwt", ".pac", ".sa"),
+    params:
+        prefix=lambda wildcards, output: os.path.splitext(output.idx[0])[0],
+        approach="bwtsw",
+    log:
+        "logs/bwa/build_index.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bwa/index"
