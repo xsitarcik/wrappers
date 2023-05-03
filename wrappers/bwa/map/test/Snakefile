@@ -9,4 +9,4 @@ rule bwa__map_reads_to_reference:
         "logs/bwa__map_reads_to_reference.log",
     threads: 2
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bwa/map"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bwa/map"

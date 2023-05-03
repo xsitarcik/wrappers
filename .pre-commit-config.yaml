@@ -44,3 +44,5 @@ repos:
     rev: v0.8.4
     hooks:
       - id: snakefmt
+        args:
+          - "--line-length=120"
