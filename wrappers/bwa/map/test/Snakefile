@@ -1,0 +1,12 @@
+rule bwa__map_reads_to_reference:
+    input:
+        reads=["test_sample_R1.fastq.gz", "test_sample_R2.fastq.gz"],
+        index=multiext("bwa_index/ref", ".amb", ".ann", ".bwt", ".pac", ".sa"),
+        read_group="test_sample.txt",
+    output:
+        bam="test_sample.bam",
+    log:
+        "logs/bwa__map_reads_to_reference.log",
+    threads: 2
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bwa/map"

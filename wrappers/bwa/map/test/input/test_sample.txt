@@ -1,0 +1,1 @@
+@RG	ID:000000000-K6CDP.test_sample	LB:000000000-K6CDP.test_sample	PL:ILLUMINA	SM:test_sample

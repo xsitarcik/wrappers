@@ -18,4 +18,4 @@ rule bowtie2__map_reads_to_reference:
     log:
         "logs/bowtie2__map_reads_to_reference.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bowtie2/map"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bowtie2/map"

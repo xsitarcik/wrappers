@@ -17,4 +17,4 @@ rule bowtie2__prepare_index:
         out="logs/bowtie2__prepare_index.log",
     threads: 2
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/bowtie2/index"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bowtie2/index"

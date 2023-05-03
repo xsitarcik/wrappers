@@ -1,0 +1,14 @@
+rule bwa__filter_reads_from_reference_se:
+    input:
+        read="test_sample.fastq.gz",
+        index=multiext("bwa_index/ref", ".amb", ".ann", ".bwt", ".pac", ".sa"),
+    output:
+        read="filtered/test_sample.fastq.gz",
+    params:
+        indices=["bwa_index/ref"],
+        keep_param="-F 2",
+    threads: 2
+    log:
+        "logs/bwa/filter_reads_from_reference_se.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bwa/filter_se"
