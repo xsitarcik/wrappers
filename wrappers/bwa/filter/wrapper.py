@@ -1,8 +1,15 @@
+import os
 import tempfile
 
 from snakemake.shell import shell
 
 log = snakemake.log_fmt_shell(stdout=False, stderr=True)
+
+PRESUMED_SUFFIX = "_R1.fastq.gz"
+if not snakemake.input.r1.endswith(PRESUMED_SUFFIX):
+    raise ValueError(f"{snakemake.input.r1} does not ends with {PRESUMED_SUFFIX}")
+
+sample_name = os.path.basename(snakemake.input.r1).replace(PRESUMED_SUFFIX, "")
 
 with tempfile.TemporaryDirectory() as tmpdir:
     shell(
@@ -13,9 +20,9 @@ with tempfile.TemporaryDirectory() as tmpdir:
         "  REF=`basename $INDEX`;"
         "  REF_DIR={tmpdir}/$REF;"
         "  mkdir -p $REF_DIR;"
-        "  BAM_OUT=$REF_DIR/{snakemake.wildcards.sample}_out.bam;"
-        "  R1_OUT=$REF_DIR/{snakemake.wildcards.sample}_R1.fastq.gz;"
-        "  R2_OUT=$REF_DIR/{snakemake.wildcards.sample}_R2.fastq.gz;"
+        "  BAM_OUT=$REF_DIR/{sample_name}_out.bam;"
+        "  R1_OUT=$REF_DIR/{sample_name}_R1.fastq.gz;"
+        "  R2_OUT=$REF_DIR/{sample_name}_R2.fastq.gz;"
         "  bwa mem "
         "   -t {snakemake.threads}"
         "   $INDEX"

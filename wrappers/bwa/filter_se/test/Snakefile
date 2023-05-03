@@ -9,6 +9,6 @@ rule bwa__filter_reads_from_reference_se:
         keep_param="-F 2",
     threads: 2
     log:
-        "logs/bwa__filter_reads_from_reference_se.log",
+        "logs/bwa/filter_reads_from_reference_se.log",
     wrapper:
         "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bwa/filter_se"

@@ -7,6 +7,6 @@ rule bwa__build_index:
         prefix=lambda wildcards, output: os.path.splitext(output.idx[0])[0],
         approach="bwtsw",
     log:
-        "logs/bwa__build_index.log",
+        "logs/bwa/build_index.log",
     wrapper:
         "https://github.com/xsitarcik/wrappers/raw/main/wrappers/bwa/index"
