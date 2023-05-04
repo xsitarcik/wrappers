@@ -7,4 +7,4 @@ rule samtools__bam_index:
     log:
         "logs/samtools__bam_index.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/index"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/samtools/index"

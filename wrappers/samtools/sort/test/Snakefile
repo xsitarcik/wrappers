@@ -8,4 +8,4 @@ rule samtools__sort_mapped_reads:
         "logs/samtools__sort_mapped_reads.log",
     threads: 2
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/sort"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/samtools/sort"

@@ -14,4 +14,4 @@ rule qualimap__mapping_quality_report:
     log:
         "logs/qualimap__mapping_quality_report.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/qualimap/bamqc"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/qualimap/bamqc"

@@ -6,4 +6,4 @@ rule samtools__convert_sam_to_bam:
     log:
         "logs/samtools__convert_sam_to_bam.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/view"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/samtools/view"
