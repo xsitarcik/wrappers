@@ -1,0 +1,12 @@
+rule fastqc__quality_report:
+    input:
+        read="test_sample.fastq.gz",
+    output:
+        html="test_sample_fastqc.html",
+        zip="test_sample_fastqc.zip",
+        qc_data="test_sample_fastqc/fastqc_data.txt",
+        summary_txt="test_sample_fastqc/summary.txt",
+    log:
+        "logs/fastqc/quality_report.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/fastqc/quality"
