@@ -1,0 +1,17 @@
+rule qualimap__mapping_quality_report:
+    input:
+        bam="test_sample.bam",
+        bai="test_sample.bam.bai",
+    output:
+        report_dir=directory("bamqc_test_sample"),
+    params:
+        extra=[
+            "--paint-chromosome-limits",
+            "-outformat PDF:HTML",
+        ],
+    resources:
+        mem_mb=4096,
+    log:
+        "logs/qualimap__mapping_quality_report.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/qualimap/bamqc"
