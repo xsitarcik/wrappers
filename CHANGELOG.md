@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/xsitarcik/wrappers/compare/v1.1.0...v1.2.0) (2023-05-04)
+
+
+### Features
+
+* added basic samtools rules, faidx, index, sort and view ([a188213](https://github.com/xsitarcik/wrappers/commit/a1882135ea40ca48e9c55cdf605477a3a3543a27))
+* added fastqc quality report ([878ca42](https://github.com/xsitarcik/wrappers/commit/878ca425aa9d2d32d09eb1df03815ff7c66c781e))
+* added qualimap bamqc basic rule ([87b053c](https://github.com/xsitarcik/wrappers/commit/87b053ca1fee3e956edfcf9d7f14edea14e6911a))
+
+
+### Bug Fixes
+
+* move to new repo ([98925b2](https://github.com/xsitarcik/wrappers/commit/98925b23aa5042c0c26176623a15f99f0cf61ee1))
+
 ## [1.1.0](https://github.com/xsitarcik/wrappers/compare/v1.0.0...v1.1.0) (2023-05-03)
 
 
