@@ -1,0 +1,9 @@
+rule samtools__convert_sam_to_bam:
+    input:
+        sam="test_sample.sam",
+    output:
+        bam="test_sample.bam",
+    log:
+        "logs/samtools__convert_sam_to_bam.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/samtools/view"
