@@ -1,0 +1,11 @@
+rule samtools__sort_mapped_reads:
+    input:
+        ref="ref.fa",
+        bam="test_sample.bam",
+    output:
+        bam="sorted.bam",
+    log:
+        "logs/samtools__sort_mapped_reads.log",
+    threads: 2
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/sort"

@@ -1,0 +1,10 @@
+rule samtools__bam_index:
+    input:
+        bam="test_sample.bam",
+    output:
+        bai="test_sample.bam.bai",
+    threads: 2
+    log:
+        "logs/samtools__bam_index.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/index"

@@ -1,0 +1,9 @@
+rule samtools__prepare_fai_index:
+    input:
+        reference="genome.fa",
+    output:
+        "genome.fa.fai",
+    log:
+        "logs/samtools__prepare_fai_index.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers_legacy/raw/main/wrappers/samtools/faidx"
