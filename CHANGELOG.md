@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/xsitarcik/wrappers/compare/v1.2.0...v1.3.0) (2023-05-10)
+
+
+### Features
+
+* added cutadapt for both single and paired ([0ce8037](https://github.com/xsitarcik/wrappers/commit/0ce803703acfaad3b45486b5e066019120ea8bdd))
+
 ## [1.2.0](https://github.com/xsitarcik/wrappers/compare/v1.1.0...v1.2.0) (2023-05-04)
 
 
