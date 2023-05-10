@@ -1,8 +1,7 @@
-rule cutadapt__trim_reads:
+rule cutadapt__trim_reads_pe:
     input:
         r1="test_sample_R1.fastq.gz",
         r2="test_sample_R2.fastq.gz",
-        fasta="adapters.fasta",
     output:
         r1="trimmed/test_sample_R1.fastq.gz",
         r2="trimmed/test_sample_R2.fastq.gz",

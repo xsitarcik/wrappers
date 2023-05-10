@@ -1,4 +1,4 @@
-rule bwa__filter_reads_from_reference:
+rule bwa__filter_reads_from_reference_pe:
     input:
         r1="test_sample_R1.fastq.gz",
         r2="test_sample_R2.fastq.gz",

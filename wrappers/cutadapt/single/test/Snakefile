@@ -1,4 +1,4 @@
-rule cutadapt__trim_reads:
+rule cutadapt__trim_reads_se:
     input:
         read="test_sample.fastq.gz",
     output:
