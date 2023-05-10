@@ -12,10 +12,10 @@ rule cutadapt__trim_reads:
         error_rate=0.1,
         times=1,
         action="trim",
-        minimum_length=0,
-        quality_cutoff=0,
-        head_cut="",
-        tail_cut="",
+        minimum_length=3,
+        quality_cutoff="10,10",
+        head_cut=1,
+        tail_cut=2,
     threads: 2
     log:
         "logs/cutadapt__trim_reads_single.log",
