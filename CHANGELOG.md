@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/xsitarcik/wrappers/compare/v1.3.0...v1.4.0) (2023-05-10)
+
+
+### Features
+
+* added picard rules for BedToIntervalList, MarkDuplicates and CreateSequenceDictionary ([dd384ea](https://github.com/xsitarcik/wrappers/commit/dd384eac4649dd88f10f57af745867bacd3a5ea2))
+
 ## [1.3.0](https://github.com/xsitarcik/wrappers/compare/v1.2.0...v1.3.0) (2023-05-10)
 
 
