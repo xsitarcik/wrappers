@@ -1,0 +1,15 @@
+rule seqtk__subsample_reads_pe:
+    input:
+        r1="test_sample_R1.fastq.gz",
+        r2="test_sample_R2.fastq.gz",
+    output:
+        r1="subsampled/test_sample_R1.fastq.gz",
+        r2="subsampled/test_sample_R2.fastq.gz",
+    params:
+        seed=1,
+        n_reads=3,
+        reduce_memory=False,
+    log:
+        "logs/seqtk__subsample_reads_pe.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/seqtk/subsample_paired"
