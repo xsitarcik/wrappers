@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/xsitarcik/wrappers/compare/v1.4.0...v1.5.0) (2023-05-10)
+
+
+### Features
+
+* added subsampling using seqtk ([a93ef17](https://github.com/xsitarcik/wrappers/commit/a93ef177fed8f1e1abcf427fa7f7cc9c8fe7928b))
+
 ## [1.4.0](https://github.com/xsitarcik/wrappers/compare/v1.3.0...v1.4.0) (2023-05-10)
 
 
