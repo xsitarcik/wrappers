@@ -1,0 +1,13 @@
+rule seqtk__subsample_reads_se:
+    input:
+        read="test_sample.fastq.gz",
+    output:
+        read="subsampled/test_sample.fastq.gz",
+    params:
+        seed=1,
+        n_reads=3,
+        reduce_memory=False,
+    log:
+        "logs/seqtk__subsample_reads_se.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/seqtk/subsample_single"
