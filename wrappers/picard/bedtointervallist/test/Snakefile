@@ -1,0 +1,13 @@
+rule picard__bed_to_interval_list:
+    input:
+        bed="regions.bed",
+        seq_dict="genome.dict",
+    output:
+        intervals="genome/regions.interval_list",
+    params:
+        unique_only=True,
+        do_sorting=True,
+    log:
+        "logs/picard__bed_to_interval_list.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/picard/bedtointervallist"
