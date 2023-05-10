@@ -1,0 +1,9 @@
+rule picard__prepare_dict_index:
+    input:
+        reference="genome.fa",
+    output:
+        seq_dict="genome.dict",
+    log:
+        "logs/picard/prepare_dict_index.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/picard/createsequencedictionary"
