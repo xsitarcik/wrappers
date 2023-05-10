@@ -1,0 +1,23 @@
+rule cutadapt__trim_reads:
+    input:
+        read="test_sample.fastq.gz",
+    output:
+        read="trimmed/test_sample.fastq.gz",
+        report="trimmed/test_sample_cutadapt.json",
+    params:
+        anywhere_adapter="file:adapters.fasta",
+        front_adapter="",
+        regular_adapter="",
+        overlap=10,
+        error_rate=0.1,
+        times=1,
+        action="trim",
+        minimum_length=0,
+        quality_cutoff=0,
+        head_cut="",
+        tail_cut="",
+    threads: 2
+    log:
+        "logs/cutadapt__trim_reads_single.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/cutadapt/single"
