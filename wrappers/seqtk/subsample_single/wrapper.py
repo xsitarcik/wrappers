@@ -3,7 +3,7 @@ from snakemake.shell import shell
 log = snakemake.log_fmt_shell()
 
 reduce_memory = snakemake.params.get("reduce_memory", True)
-reduce_memory_mode = "- 2" if reduce_memory else ""
+reduce_memory_mode = "-2" if reduce_memory else ""
 
 shell(
     "("
