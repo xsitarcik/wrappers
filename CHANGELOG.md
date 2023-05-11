@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/xsitarcik/wrappers/compare/v1.5.1...v1.5.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* fix seqtk memory mode argument ([d6ccb5b](https://github.com/xsitarcik/wrappers/commit/d6ccb5b9b087d6597acef1372dbb25a0d792d5e9))
+
 ## [1.5.1](https://github.com/xsitarcik/wrappers/compare/v1.5.0...v1.5.1) (2023-05-11)
 
 
