@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/xsitarcik/wrappers/compare/v1.5.0...v1.5.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* cutadapt optional params removed and replaced by extra ([752cac6](https://github.com/xsitarcik/wrappers/commit/752cac6db1e143292313bbea255d79960d42ce5b))
+
 ## [1.5.0](https://github.com/xsitarcik/wrappers/compare/v1.4.0...v1.5.0) (2023-05-10)
 
 
