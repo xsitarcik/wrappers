@@ -7,7 +7,9 @@ log = snakemake.log_fmt_shell(stdout=True, stderr=True)
 
 
 with tempfile.TemporaryDirectory() as tmpdir:
-    shell("fastqc --outdir {tmpdir} --extract --threads {snakemake.threads} {snakemake.input.read} {log}")
+    shell(
+        "fastqc --outdir {tmpdir} --extract --dir {tmpdir} --threads {snakemake.threads} {snakemake.input.read} {log}"
+    )
 
     PRESUMED_SUFFIX = ".fastq.gz"
     if not snakemake.input.read.endswith(PRESUMED_SUFFIX):
