@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/xsitarcik/wrappers/compare/v1.5.2...v1.5.3) (2023-05-19)
+
+
+### Bug Fixes
+
+* added tmpdir handling in fastqc calling ([108768a](https://github.com/xsitarcik/wrappers/commit/108768af7e47960cb3c066e4dcce3a1a60131a34))
+
 ## [1.5.2](https://github.com/xsitarcik/wrappers/compare/v1.5.1...v1.5.2) (2023-05-11)
 
 
