@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.4](https://github.com/xsitarcik/wrappers/compare/v1.5.3...v1.5.4) (2023-06-09)
+
+
+### Bug Fixes
+
+* fastqc can be called with the memory parameter ([f79fb4a](https://github.com/xsitarcik/wrappers/commit/f79fb4aeeefe9c340d05c9e972c66ad049faf9e4))
+
 ## [1.5.3](https://github.com/xsitarcik/wrappers/compare/v1.5.2...v1.5.3) (2023-05-19)
 
 
