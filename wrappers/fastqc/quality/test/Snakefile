@@ -6,6 +6,8 @@ rule fastqc__quality_report:
         zip="test_sample_fastqc.zip",
         qc_data="test_sample_fastqc/fastqc_data.txt",
         summary_txt="test_sample_fastqc/summary.txt",
+    resources:
+        mem_mb=512,
     log:
         "logs/fastqc/quality_report.log",
     wrapper:
