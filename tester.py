@@ -177,8 +177,11 @@ def get_failed_tests(test_results: dict[str, TestResult]) -> dict[str, TestResul
 
 if __name__ == "__main__":
     test_results = run_tests_for_changed_files(sys.argv[1:])
-    failed_tests = get_failed_tests(test_results)
+    print("Printing test results")
+    for wrapper, result in test_results.items():
+        print(wrapper, result)
 
+    failed_tests = get_failed_tests(test_results)
     if len(failed_tests) > 0:
         print_out_information_about_failed_tests(failed_tests)
         exit(-1)
