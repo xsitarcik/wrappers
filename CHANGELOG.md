@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.6](https://github.com/xsitarcik/wrappers/compare/v1.5.5...v1.5.6) (2023-06-13)
+
+
+### Bug Fixes
+
+* fastqc now correctly computes needed memory ([18d7479](https://github.com/xsitarcik/wrappers/commit/18d7479dc4a295e3fd5b642dc89744a59a47945f))
+
 ## [1.5.5](https://github.com/xsitarcik/wrappers/compare/v1.5.4...v1.5.5) (2023-06-13)
 
 
