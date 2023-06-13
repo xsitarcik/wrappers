@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/xsitarcik/wrappers/compare/v1.5.4...v1.5.5) (2023-06-13)
+
+
+### Bug Fixes
+
+* added temp dir for fastqc io java ([38a7d2f](https://github.com/xsitarcik/wrappers/commit/38a7d2fbf83e2e3ad3b18847463e168f13402875))
+
 ## [1.5.4](https://github.com/xsitarcik/wrappers/compare/v1.5.3...v1.5.4) (2023-06-09)
 
 
