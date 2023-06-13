@@ -10,5 +10,8 @@ rule fastqc__quality_report:
         mem_mb=512,
     log:
         "logs/fastqc/quality_report.log",
+    threads: 2
+    resources:
+        mem_mb=512,
     wrapper:
         "https://github.com/xsitarcik/wrappers/raw/main/wrappers/fastqc/quality"
