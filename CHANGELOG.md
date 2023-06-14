@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.7](https://github.com/xsitarcik/wrappers/compare/v1.5.6...v1.5.7) (2023-06-14)
+
+
+### Bug Fixes
+
+* added bwa_map with piped sort and optional filter ([#27](https://github.com/xsitarcik/wrappers/issues/27)) ([4f6071f](https://github.com/xsitarcik/wrappers/commit/4f6071f5c10dbed88710784dcfec87db9a980810))
+
 ## [1.5.6](https://github.com/xsitarcik/wrappers/compare/v1.5.5...v1.5.6) (2023-06-13)
 
 
