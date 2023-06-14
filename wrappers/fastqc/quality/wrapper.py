@@ -19,8 +19,7 @@ if not snakemake.input.read.endswith(PRESUMED_SUFFIX):
 
 with tempfile.TemporaryDirectory() as tmpdir:
     shell(
-        "fastqc --outdir {tmpdir} --extract --threads {snakemake.threads}"
-        " -Djava.io.tmpdir={tmpdir} {memory_arg} {snakemake.input.read} {log}"
+        "fastqc --outdir {tmpdir} --extract --threads {snakemake.threads}" " {memory_arg} {snakemake.input.read} {log}"
     )
 
     base_name = os.path.basename(snakemake.input.read).replace(PRESUMED_SUFFIX, "")

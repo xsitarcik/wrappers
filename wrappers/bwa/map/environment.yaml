@@ -4,4 +4,4 @@ channels:
   - nodefaults
 dependencies:
   - bwa=0.7.17
-  - samtools=1.13
+  - samtools=1.17

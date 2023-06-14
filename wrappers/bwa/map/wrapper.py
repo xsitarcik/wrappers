@@ -1,4 +1,5 @@
 import os
+import tempfile
 
 from snakemake.shell import shell
 
@@ -13,13 +14,30 @@ else:
     raise ValueError(f"Expected 1 or 2 reads, got {len(snakemake.input.reads)}")
 
 index = os.path.splitext(snakemake.input.index[0])[0]
+filter_flags = []
+if snakemake.params.exclude_flags:
+    filter_flags.append(f"--exclude-flags {snakemake.params.exclude_flags}")
+if snakemake.params.require_flags:
+    filter_flags.append(f"--require-flags {snakemake.params.require_flags}")
 
-shell(
-    "(bwa mem "
-    " -t {snakemake.threads}"
-    " -R \"$(sed 's/\\t/\\\\t/g' < {snakemake.input.read_group})\""
-    " {index}"
-    " {input_reads}"
-    " |"
-    " samtools view -bS - > {snakemake.output.bam}) {log}"
-)
+filter_arg = ""
+if filter_flags:
+    filters = " ".join(filter_flags)
+    filter_arg = f"| samtools view {filters}"
+
+total_memory = snakemake.resources.get("mem_mb", 0)
+thread_memory = int(total_memory / snakemake.threads)
+memory_arg = ""
+if thread_memory != 0:
+    memory_arg = f"-m {thread_memory}M"
+
+with tempfile.TemporaryDirectory() as tmpdir:
+    shell(
+        "(bwa mem -t {snakemake.threads}"
+        " -R \"$(sed 's/\\t/\\\\t/g' < {snakemake.input.read_group})\""
+        " {index} {input_reads}"
+        " {filter_arg}"
+        " |"
+        " samtools sort -o {snakemake.output.bam} {memory_arg} -@ {snakemake.threads} -T {tmpdir}"
+        " ) {log}"
+    )
