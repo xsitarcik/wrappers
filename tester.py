@@ -179,7 +179,7 @@ if __name__ == "__main__":
     test_results = run_tests_for_changed_files(sys.argv[1:])
     print("Printing test results")
     for wrapper, result in test_results.items():
-        print(wrapper, result)
+        print(wrapper, result.status)
 
     failed_tests = get_failed_tests(test_results)
     if len(failed_tests) > 0:

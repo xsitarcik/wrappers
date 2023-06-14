@@ -5,6 +5,8 @@ rule bwa__map_reads_to_reference:
         read_group="test_sample.txt",
     output:
         bam="test_sample.bam",
+    params:
+        exclude_flags=[4],
     log:
         "logs/bwa__map_reads_to_reference.log",
     threads: 2
