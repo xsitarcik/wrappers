@@ -21,6 +21,7 @@ if "require_flag" in snakemake.params:
     filter_flags.append(f"--require-flags {snakemake.params.require_flag}")
 
 filter_arg = ""
+print("produced filters:", filter_flags)
 if filter_flags:
     filters = " ".join(filter_flags)
     filter_arg = f"| samtools view {filters}"
