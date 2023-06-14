@@ -15,10 +15,10 @@ else:
 
 index = os.path.splitext(snakemake.input.index[0])[0]
 filter_flags = []
-if "exclude_flags" in snakemake.params:
-    filter_flags.append(f"--exclude-flags {snakemake.params.exclude_flags}")
-if "require_flags" in snakemake.params:
-    filter_flags.append(f"--require-flags {snakemake.params.require_flags}")
+if "exclude_flag" in snakemake.params:
+    filter_flags.append(f"--exclude-flags {snakemake.params.exclude_flag}")
+if "require_flag" in snakemake.params:
+    filter_flags.append(f"--require-flags {snakemake.params.require_flag}")
 
 filter_arg = ""
 if filter_flags:

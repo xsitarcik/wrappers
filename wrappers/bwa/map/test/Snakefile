@@ -6,7 +6,7 @@ rule bwa__map_reads_to_reference:
     output:
         bam="test_sample.bam",
     params:
-        exclude_flags=[4],
+        exclude_flag=4,
     log:
         "logs/bwa__map_reads_to_reference.log",
     threads: 2
