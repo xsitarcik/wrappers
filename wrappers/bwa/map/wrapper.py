@@ -15,18 +15,10 @@ else:
 
 index = os.path.splitext(snakemake.input.index[0])[0]
 
-filter_flags = []
-exclude_flag_param = snakemake.params.get("exclude_flag", "")
-if exclude_flag_param:
-    filter_flags.append(f"--exclude-flags {exclude_flag_param}")
-require_flag_param = snakemake.params.get("require_flag", "")
-if require_flag_param:
-    filter_flags.append(f"--require-flags {require_flag_param}")
-
+filter_param = snakemake.params.get("filter", "")
 filter_arg = ""
-if filter_flags:
-    filters = " ".join(filter_flags)
-    filter_arg = f"| samtools view {filters}"
+if filter_param:
+    filter_arg = "| samtools view " + filter_param
 
 total_memory = snakemake.resources.get("mem_mb", 0)
 thread_memory = int(total_memory / snakemake.threads)
