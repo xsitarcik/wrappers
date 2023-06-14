@@ -18,7 +18,7 @@ index = os.path.splitext(snakemake.input.index[0])[0]
 filter_param = snakemake.params.get("filter", "")
 filter_arg = ""
 if filter_param:
-    filter_arg = "| samtools view " + filter_param
+    filter_arg = "| samtools view " + filter_param + " -"
 
 total_memory = snakemake.resources.get("mem_mb", 0)
 thread_memory = int(total_memory / snakemake.threads)
