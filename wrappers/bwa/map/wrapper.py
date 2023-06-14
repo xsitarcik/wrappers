@@ -26,9 +26,8 @@ if require_flag_param:
 filter_arg = ""
 if filter_flags:
     filters = " ".join(filter_flags)
-    filter_arg = f"| sramtools view {filters}"
+    filter_arg = f"| samtools view {filters}"
 
-print(filter_arg)
 total_memory = snakemake.resources.get("mem_mb", 0)
 thread_memory = int(total_memory / snakemake.threads)
 memory_arg = ""
