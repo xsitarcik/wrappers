@@ -14,18 +14,21 @@ else:
     raise ValueError(f"Expected 1 or 2 reads, got {len(snakemake.input.reads)}")
 
 index = os.path.splitext(snakemake.input.index[0])[0]
+
 filter_flags = []
-if "exclude_flag" in snakemake.params:
-    filter_flags.append(f"--exclude-flags {snakemake.params.exclude_flag}")
-if "require_flag" in snakemake.params:
-    filter_flags.append(f"--require-flags {snakemake.params.require_flag}")
+exclude_flag_param = snakemake.params.get("exclude_flag", "")
+if exclude_flag_param:
+    filter_flags.append(f"--exclude-flags {exclude_flag_param}")
+require_flag_param = snakemake.params.get("require_flag", "")
+if require_flag_param:
+    filter_flags.append(f"--require-flags {require_flag_param}")
 
 filter_arg = ""
-print("produced filters:", filter_flags)
 if filter_flags:
     filters = " ".join(filter_flags)
-    filter_arg = f"| samtools view {filters}"
+    filter_arg = f"| sramtools view {filters}"
 
+print(filter_arg)
 total_memory = snakemake.resources.get("mem_mb", 0)
 thread_memory = int(total_memory / snakemake.threads)
 memory_arg = ""
