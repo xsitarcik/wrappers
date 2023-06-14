@@ -18,13 +18,18 @@ index = os.path.splitext(snakemake.input.index[0])[0]
 filter_param = snakemake.params.get("filter", "")
 filter_arg = ""
 if filter_param:
-    filter_arg = "| samtools view " + filter_param + " -"
+    filter_arg = "| samtools view " + filter_param + " -b -u"
 
 total_memory = snakemake.resources.get("mem_mb", 0)
 thread_memory = int(total_memory / snakemake.threads)
 memory_arg = ""
 if thread_memory != 0:
     memory_arg = f"-m {thread_memory}M"
+
+additional_threads = int(snakemake.threads) - 1
+threads_arg = ""
+if additional_threads > 0:
+    threads_arg = f" -@ {additional_threads}"
 
 with tempfile.TemporaryDirectory() as tmpdir:
     shell(
@@ -33,6 +38,6 @@ with tempfile.TemporaryDirectory() as tmpdir:
         " {index} {input_reads}"
         " {filter_arg}"
         " |"
-        " samtools sort -o {snakemake.output.bam} {memory_arg} -@ {snakemake.threads} -T {tmpdir}"
+        " samtools sort -o {snakemake.output.bam} {memory_arg} {threads_arg} -T {tmpdir}"
         " ) {log}"
     )
