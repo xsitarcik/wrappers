@@ -5,6 +5,8 @@ rule picard__mark_duplicates:
     output:
         bam="deduplicated.bam",
         stat="deduplicated.stats",
+    resources:
+        mem_mb=2048,
     log:
         "logs/picard__mark_duplicates.log",
     wrapper:
