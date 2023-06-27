@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.8](https://github.com/xsitarcik/wrappers/compare/v1.5.7...v1.5.8) (2023-06-27)
+
+
+### Bug Fixes
+
+* picard markduplicates using java mem arg ([f8b45cd](https://github.com/xsitarcik/wrappers/commit/f8b45cd0837f0c849e442a4d789d04e08f42bae1))
+
 ## [1.5.7](https://github.com/xsitarcik/wrappers/compare/v1.5.6...v1.5.7) (2023-06-14)
 
 
