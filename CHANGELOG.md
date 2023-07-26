@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.9](https://github.com/xsitarcik/wrappers/compare/v1.5.8...v1.5.9) (2023-07-26)
+
+
+### Bug Fixes
+
+* cutadapt paired now takes list as input ([428432c](https://github.com/xsitarcik/wrappers/commit/428432cf46383e5c648150bd442955c763e3fab9))
+
 ## [1.5.8](https://github.com/xsitarcik/wrappers/compare/v1.5.7...v1.5.8) (2023-06-27)
 
 
