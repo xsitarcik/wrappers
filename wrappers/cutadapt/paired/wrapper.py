@@ -17,7 +17,6 @@ shell(
     " --report full"
     " --json={snakemake.output.report}"
     " {extra}"
-    " {snakemake.input.r1}"
-    " {snakemake.input.r2}"
+    " {snakemake.input}"
     " {log}"
 )
