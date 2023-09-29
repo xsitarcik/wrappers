@@ -1,0 +1,13 @@
+rule ivar__create_consensus:
+    input:
+        bam="test_sample.bam",
+        bai="test_sample.bam.bai",
+    output:
+        consensus="results/consensus/test_sample.fa",
+    params:
+        samtools_params="--no-BAQ ",
+        ivar_params="-t 0",
+    log:
+        "logs/ivar__create_consensus.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/ivar/consensus"
