@@ -100,7 +100,9 @@ def run_test_snake(test_dir: str):
 
 
 def call_snakefile(snakefile: str, tmpdir: str):
-    command = f"snakemake -c1 --snakefile {snakefile} --directory {tmpdir} --printshellcmds --use-conda"
+    command = (
+        f"snakemake --show-failed-logs -c1 --snakefile {snakefile} --directory {tmpdir} --printshellcmds --use-conda"
+    )
     print("Calling command: {}".format(command))
 
     proc = subprocess.run(command, shell=True, capture_output=True)

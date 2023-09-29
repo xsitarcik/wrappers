@@ -1,0 +1,16 @@
+rule kraken__decontaminate_se:
+    input:
+        read="test_sample.fastq.gz",
+        kraken_output="test_sample.kraken",
+        kraken_report="test_sample.kreport2",
+    output:
+        read="results/test_sample.fastq.gz",
+        std_out=temp("results/test_sample_decontamination.out"),
+    params:
+        taxid="9606 9607",  # space-separated list of taxaids to filter out
+        extra="",  # allowed "--include-children" and "--include-parents"
+    log:
+        "logs/kraken__decontaminate_se.log",
+    threads: 1
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/kraken/decontaminate_se"

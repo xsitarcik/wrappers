@@ -1,0 +1,18 @@
+rule kraken__decontaminate_pe:
+    input:
+        r1="test_sample_R1.fastq.gz",
+        r2="test_sample_R2.fastq.gz",
+        kraken_output="test_sample.kraken",
+        kraken_report="test_sample.kreport2",
+    output:
+        r1="results/test_sample_R1.fastq.gz",
+        r2="results/test_sample_R2.fastq.gz",
+        std_out=temp("results/test_sample_decontamination.out"),
+    params:
+        taxid="9606 9607",  # space-separated list of taxaids to filter out
+        extra="",  # allowed "--include-children" and "--include-parents"
+    threads: 1
+    log:
+        "logs/kraken__decontaminate_pe.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/kraken/decontaminate_pe"
