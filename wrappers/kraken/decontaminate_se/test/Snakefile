@@ -11,5 +11,6 @@ rule kraken__decontaminate_se:
         extra="",  # allowed "--include-children" and "--include-parents"
     log:
         "logs/kraken__decontaminate_se.log",
+    threads: 1
     wrapper:
         "https://github.com/xsitarcik/wrappers/raw/main/wrappers/kraken/decontaminate_se"

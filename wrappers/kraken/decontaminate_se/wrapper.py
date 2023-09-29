@@ -13,6 +13,6 @@ shell(
     " -s {snakemake.input.read} -o {temp_read} "
     " --exclude -t {snakemake.params.taxid} {extra} --fastq-output > {snakemake.output.std_out}"
     " &&"
-    " pigz {temp_read} -9 -p {snakemake.threads} > {snakemake.output.read}"
+    " pigz {temp_read} -9 -c -p {snakemake.threads} > {snakemake.output.read}"
     " ) {log}"
 )

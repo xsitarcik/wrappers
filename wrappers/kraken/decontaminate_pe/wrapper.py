@@ -14,8 +14,8 @@ shell(
     " -s {snakemake.input.r1} -s2 {snakemake.input.r2} -o {temp_r1} -o2 {temp_r2}"
     " --exclude -t {snakemake.params.taxid} {extra} --fastq-output > {snakemake.output.std_out}"
     " &&"
-    " pigz {temp_r1} -9 -p {snakemake.threads} > {snakemake.output.r1}"
+    " pigz {temp_r1} -9 -c -p {snakemake.threads} > {snakemake.output.r1}"
     " && "
-    " pigz {temp_r2} -9 -p {snakemake.threads} > {snakemake.output.r2}"
+    " pigz {temp_r2} -9 -c -p {snakemake.threads} > {snakemake.output.r2}"
     " ) {log}"
 )

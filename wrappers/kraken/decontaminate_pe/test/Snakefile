@@ -11,6 +11,7 @@ rule kraken__decontaminate_pe:
     params:
         taxid="9606 9607",  # space-separated list of taxaids to filter out
         extra="",  # allowed "--include-children" and "--include-parents"
+    threads: 1
     log:
         "logs/kraken__decontaminate_pe.log",
     wrapper:
