@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/xsitarcik/wrappers/compare/v1.5.9...v1.6.0) (2023-09-29)
+
+
+### Features
+
+* added ivar variants and consensus ([d0d4fbd](https://github.com/xsitarcik/wrappers/commit/d0d4fbde09b627e260bd982a97780ca9367e49a6))
+
 ## [1.5.9](https://github.com/xsitarcik/wrappers/compare/v1.5.8...v1.5.9) (2023-07-26)
 
 
