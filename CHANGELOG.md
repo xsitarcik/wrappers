@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/xsitarcik/wrappers/compare/v1.6.0...v1.7.0) (2023-09-29)
+
+
+### Features
+
+* added kraken decontamination rules ([215a1cb](https://github.com/xsitarcik/wrappers/commit/215a1cba2169d166e9df23f97c63efeac8dc8eed))
+
 ## [1.6.0](https://github.com/xsitarcik/wrappers/compare/v1.5.9...v1.6.0) (2023-09-29)
 
 
