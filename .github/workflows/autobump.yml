@@ -21,7 +21,7 @@ jobs:
         uses: snakemake/snakedeploy-github-action@v1
         with:
           subcommand: update-conda-envs
-          args: wrappers/*/*/environment.yaml --pin-envs
+          args: workflow/envs/*.yaml
 
       # Make changes to pull request here
       - name: Create Pull Request
@@ -29,4 +29,5 @@ jobs:
         with:
           branch: autobump/conda-envs
           title: "perf: autobump conda envs"
+          commit-message: "perf: autobump conda envs"
           token: ${{ steps.generate-token.outputs.token }}
