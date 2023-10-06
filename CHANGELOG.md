@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/xsitarcik/wrappers/compare/v1.7.0...v1.8.0) (2023-10-06)
+
+
+### Features
+
+* added conversion of ivar tsv into vcf ([cdee6ae](https://github.com/xsitarcik/wrappers/commit/cdee6ae1aebdf76cc235af7f6d9ec406cae02dab))
+
 ## [1.7.0](https://github.com/xsitarcik/wrappers/compare/v1.6.0...v1.7.0) (2023-09-29)
 
 
