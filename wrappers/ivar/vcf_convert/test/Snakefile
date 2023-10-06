@@ -1,0 +1,18 @@
+rule ivar__variants_to_vcf:
+    input:
+        "variants.tsv",
+    output:
+        all=report(
+            "results/variants_ivar/{sample}/all.vcf",
+            category="{sample}",
+            labels={
+                "Type": "Variants - Ivar vcf",
+            },
+        ),
+        filtered="results/variants_ivar/{sample}/passed_only.vcf",  # can be omitted
+    params:
+        min_alelle_freq=3,  # optional [0], if used, filtered output will also check for this value
+    log:
+        "logs/ivar__variants_to_vcf.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/ivar/vcf_convert"
