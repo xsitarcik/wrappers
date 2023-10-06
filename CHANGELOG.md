@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/xsitarcik/wrappers/compare/v1.10.0...v1.11.0) (2023-10-06)
+
+
+### Features
+
+* added storing read group ([5b931d5](https://github.com/xsitarcik/wrappers/commit/5b931d5c6e9b840f31395b18a9613f8a45314037))
+
 ## [1.10.0](https://github.com/xsitarcik/wrappers/compare/v1.9.0...v1.10.0) (2023-10-06)
 
 
