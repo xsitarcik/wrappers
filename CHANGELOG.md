@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/xsitarcik/wrappers/compare/v1.9.0...v1.10.0) (2023-10-06)
+
+
+### Features
+
+* added mixed positions determination from ivar ([87b1130](https://github.com/xsitarcik/wrappers/commit/87b1130649f6a05fefadab586429cf5b86772755))
+
 ## [1.9.0](https://github.com/xsitarcik/wrappers/compare/v1.8.0...v1.9.0) (2023-10-06)
 
 
