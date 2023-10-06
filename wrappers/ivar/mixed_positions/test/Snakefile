@@ -1,0 +1,15 @@
+rule ivar__compute_mixed_positions:
+    input:
+        "variants.tsv",
+    output:
+        mixed_positions="results/mixed_positions.tsv",
+        readcount="results/mixed_positions_count.txt",
+    params:
+        alt_depth=2,  # int, required
+        min_alt_freq=0.1,  # float 0-1, required
+        max_alt_freq=0.9,  # float 0-1, required
+        total_depth=10,  # int, required
+    log:
+        "logs/ivar__compute_mixed_positions.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/ivar/mixed_positions"
