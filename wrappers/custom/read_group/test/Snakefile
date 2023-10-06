@@ -1,0 +1,12 @@
+rule custom__infer_and_store_read_group:
+    input:
+        "test_sample.fastq.gz",
+    output:
+        read_group="results/read_group.txt",
+    params:
+        # sample_id=lambda wildcards: wildcards.sample
+        sample_id="test_sample_id",  # required, usually inferred from wildcards
+    log:
+        "logs/custom__infer_and_store_read_group.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/custom/read_group"
