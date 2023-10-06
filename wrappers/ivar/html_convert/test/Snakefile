@@ -1,0 +1,9 @@
+rule ivar__variants_to_html:
+    input:
+        "variants.tsv",
+    output:
+        "results/all.html",
+    log:
+        "logs/ivar__variants_to_html.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/ivar/html_convert"
