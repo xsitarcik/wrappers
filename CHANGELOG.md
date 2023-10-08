@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/xsitarcik/wrappers/compare/v1.11.0...v1.11.1) (2023-10-08)
+
+
+### Bug Fixes
+
+* added option to change ivar consensus fasta id ([30b47d5](https://github.com/xsitarcik/wrappers/commit/30b47d5e4d9f57090ea110c2eb2fe19156394cb8))
+
 ## [1.11.0](https://github.com/xsitarcik/wrappers/compare/v1.10.0...v1.11.0) (2023-10-06)
 
 
