@@ -5,6 +5,8 @@ rule ivar__create_consensus:
     output:
         consensus="results/consensus/test_sample.fa",
     params:
+        # name=lambda wildcards: f"{wildcards.sample}_{wildcards.segment}"
+        name="test_consensus",  # required, usually inferred from wildcards
         samtools_params="--no-BAQ ",
         ivar_params="-t 0",
     log:
