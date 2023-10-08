@@ -12,10 +12,14 @@ if snakemake.output.consensus.endswith(".fa"):
 else:
     raise ValueError("The output must be .fa file")
 
+name_arg = ""
+if name := snakemake.params.get("name", ""):
+    name_arg = f"-i {name}"
+
 shell(
     "("
     " samtools mpileup {samtools_extra} {snakemake.input.bam}"
     " |"
-    " ivar consensus -p {out_prefix} {ivar_extra}"
+    " ivar consensus -p {out_prefix} {name_arg} {ivar_extra}"
     ") {log}"
 )
