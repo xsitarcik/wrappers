@@ -3,6 +3,6 @@ channels:
   - bioconda
   - nodefaults
 dependencies:
-  - krakentools=1.2
-  - biopython=1.81
-  - pigz=2.6
+  - krakentools =1.2
+  - biopython =1.81
+  - pigz =2.8
