@@ -5,7 +5,7 @@ log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 unzipped_in_r1 = snakemake.input.r1.removesuffix(".gz")
 unzipped_in_r2 = snakemake.input.r2.removesuffix(".gz")
 
-inputs = "{unzipped_in_r1}\n{unzipped_in_r2}"
+inputs = f"{unzipped_in_r1}\n{unzipped_in_r2}"
 
 shell(
     "("
