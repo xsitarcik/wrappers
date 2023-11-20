@@ -1,24 +1,15 @@
-rule cutadapt__trim_reads_pe:
+rule fastuniq__deduplicate_reads_pe:
     input:
-        ["test_sample_R1.fastq.gz", "test_sample_R2.fastq.gz"],
+        r1="test_sample_R1.fastq.gz",
+        r2="test_sample_R2.fastq.gz",
     output:
-        r1="trimmed/test_sample_R1.fastq.gz",
-        r2="trimmed/test_sample_R2.fastq.gz",
-        report="trimmed/test_sample_cutadapt.json",
-    params:
-        anywhere_adapter="file:adapters.fasta",
-        front_adapter="",
-        regular_adapter="",
-        overlap=10,
-        error_rate=0.1,
-        times=1,
-        action="trim",
-        minimum_length="3:3",
-        quality_cutoff="10,10",
-        head_cut=1,
-        tail_cut=2,
+        r1="deduplicated/test_sample_R1.fastq.gz",
+        r2="deduplicated/test_sample_R2.fastq.gz",
+        unzipped_out_r1=temp("deduplicated/test_sample_R1.fastq"),
+        unzipped_out_r2=temp("deduplicated/test_sample_R2.fastq"),
+        pair_description=temp("deduplicated/test_sample.txt"),
     threads: 2
     log:
-        "logs/cutadapt__trim_reads_paired.log",
+        "logs/fastuniq.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/cutadapt/paired"
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/fastuniq/paired"
