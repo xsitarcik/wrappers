@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/xsitarcik/wrappers/compare/v1.11.4...v1.12.0) (2023-11-20)
+
+
+### Features
+
+* added fastuniq for deduplication of reads ([1a163c3](https://github.com/xsitarcik/wrappers/commit/1a163c3a936e3858b6aa98d5836eddce405ec7ca))
+
 ## [1.11.4](https://github.com/xsitarcik/wrappers/compare/v1.11.3...v1.11.4) (2023-11-17)
 
 
