@@ -4,4 +4,4 @@ channels:
   - nodefaults
 dependencies:
   - fastuniq=1.1
-  - pigz=2.6
+  - pigz=2.8
