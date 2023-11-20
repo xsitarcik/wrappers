@@ -17,7 +17,7 @@ shell(
     " &&"
     " fastuniq -i {snakemake.output.pair_description} -o {snakemake.output.unzipped_out_r1} -p {snakemake.output.unzipped_out_r2}"
     " &&"
-    " rm {unzipped_in_r1} && {unzipped_in_r2}"
+    " rm {unzipped_in_r1} && rm {unzipped_in_r2}"
     " &&"
     " pigz {snakemake.output.unzipped_out_r1} -9 -c -p {snakemake.threads} > {snakemake.output.r1}"
     " &&"
