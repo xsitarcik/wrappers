@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.1](https://github.com/xsitarcik/wrappers/compare/v1.12.0...v1.12.1) (2023-11-23)
+
+
+### Bug Fixes
+
+* fastuniq overwrites if file exists ([52a3fab](https://github.com/xsitarcik/wrappers/commit/52a3fabb00ff9eb0ba3a9db578fc3f4cd6e60e0a))
+
 ## [1.12.0](https://github.com/xsitarcik/wrappers/compare/v1.11.4...v1.12.0) (2023-11-20)
 
 
