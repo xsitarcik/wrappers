@@ -9,9 +9,9 @@ inputs = f"{unzipped_in_r1}\n{unzipped_in_r2}"
 
 shell(
     "("
-    " pigz --decompress --keep --processes {snakemake.threads} {snakemake.input.r1}"
+    " pigz --decompress --force --keep --processes {snakemake.threads} {snakemake.input.r1}"
     " &&"
-    " pigz --decompress --keep --processes {snakemake.threads} {snakemake.input.r2}"
+    " pigz --decompress --force --keep --processes {snakemake.threads} {snakemake.input.r2}"
     " &&"
     " echo {inputs:q} > {snakemake.output.pair_description}"
     " &&"
