@@ -4,5 +4,5 @@ channels:
   - nodefaults
 dependencies:
   - krakentools =1.2
-  - biopython =1.81
+  - biopython =1.82
   - pigz =2.8
