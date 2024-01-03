@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.6](https://github.com/xsitarcik/wrappers/compare/v1.12.5...v1.12.6) (2024-01-03)
+
+
+### Bug Fixes
+
+* cutadapt pe gets only extra params ([f022586](https://github.com/xsitarcik/wrappers/commit/f0225869e00df45da41a1b6c14b6f1c26a9cc7b1))
+
 ## [1.12.5](https://github.com/xsitarcik/wrappers/compare/v1.12.4...v1.12.5) (2023-12-29)
 
 
