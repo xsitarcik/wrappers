@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.7](https://github.com/xsitarcik/wrappers/compare/v1.12.6...v1.12.7) (2024-01-14)
+
+
+### Bug Fixes
+
+* added newline in vcf conversion of ivar ([4621e60](https://github.com/xsitarcik/wrappers/commit/4621e60944a3e1cf5a01a6ed1079318d747a74cd))
+
 ## [1.12.6](https://github.com/xsitarcik/wrappers/compare/v1.12.5...v1.12.6) (2024-01-03)
 
 
