@@ -91,6 +91,7 @@ def ivar_variants_to_vcf(
             f.write(header)
             for line in filt_lines:
                 f.write(line)
+                f.write("\n")
 
 
 if __name__ == "__main__":
