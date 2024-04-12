@@ -1,19 +1,10 @@
 
 rule nextclade__to_html:
     input:
-        "results/_aggregation/nextclade/nextclade.tsv",
+        "test1_nextclade.tsv",
     output:
-        report(
-            "results/_aggregation/nextclade/nextclade.html",
-            category="_aggregation",
-            labels={
-                "Type": "Nextclade - merged all",
-            },
-        ),
-    conda:
-        "../envs/python_panel.yaml"
+        "nextclade.html",
     log:
-        "logs/aggregate/nextclade__to_html.log",
-    localrule: True
-    script:
-        "../scripts/nextclade_tsv_into_html.py"
+        "logs/nextclade__to_html.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/nextclade/to_html"
