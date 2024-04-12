@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/xsitarcik/wrappers/compare/v1.12.15...v1.13.0) (2024-04-12)
+
+
+### Features
+
+* added custom nextclade wrappers ([7f61816](https://github.com/xsitarcik/wrappers/commit/7f61816951a237c64f7ee12ec0d36708c0ff19aa))
+
 ## [1.12.15](https://github.com/xsitarcik/wrappers/compare/v1.12.14...v1.12.15) (2024-04-12)
 
 
