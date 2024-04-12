@@ -1,0 +1,19 @@
+
+rule nextclade__to_html:
+    input:
+        "results/_aggregation/nextclade/nextclade.tsv",
+    output:
+        report(
+            "results/_aggregation/nextclade/nextclade.html",
+            category="_aggregation",
+            labels={
+                "Type": "Nextclade - merged all",
+            },
+        ),
+    conda:
+        "../envs/python_panel.yaml"
+    log:
+        "logs/aggregate/nextclade__to_html.log",
+    localrule: True
+    script:
+        "../scripts/nextclade_tsv_into_html.py"

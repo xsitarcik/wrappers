@@ -1,0 +1,10 @@
+
+rule nextclade__merge_all_results:
+    input:
+        nextclade_tsvs=["test1_nextclade.tsv", "test2_nextclade.tsv"],
+    output:
+        merged_tsv="merged.tsv",
+    log:
+        "logs/nextclade__merge_all_results.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/nextclade/merge_tsvs"
