@@ -1,0 +1,10 @@
+
+rule nextclade__to_html:
+    input:
+        "test1_nextclade.tsv",
+    output:
+        "results/nextclade/nextclade.html",
+    log:
+        "logs/nextclade__to_html.log",
+    wrapper:
+        "https://github.com/xsitarcik/wrappers/raw/main/wrappers/nextclade/to_html"
