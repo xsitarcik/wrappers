@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.1](https://github.com/xsitarcik/wrappers/compare/v1.13.0...v1.13.1) (2024-04-12)
+
+
+### Bug Fixes
+
+* fixed nextclade merge tsv wrapper ([56cc5a5](https://github.com/xsitarcik/wrappers/commit/56cc5a5a8be9c82ce0e39ef163cfceba7e947905))
+
 ## [1.13.0](https://github.com/xsitarcik/wrappers/compare/v1.12.15...v1.13.0) (2024-04-12)
 
 
