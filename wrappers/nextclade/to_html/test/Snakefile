@@ -3,7 +3,7 @@ rule nextclade__to_html:
     input:
         "test1_nextclade.tsv",
     output:
-        "nextclade.html",
+        "results/nextclade/nextclade.html",
     log:
         "logs/nextclade__to_html.log",
     wrapper:
