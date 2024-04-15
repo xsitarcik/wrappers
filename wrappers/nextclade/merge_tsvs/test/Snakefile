@@ -4,6 +4,8 @@ rule nextclade__merge_all_results:
         nextclade_tsvs=["test1_nextclade.tsv", "test2_nextclade.tsv"],
     output:
         merged_tsv="results/nextclade/merged.tsv",
+    params:
+        names=["virus1", "virus2"],  # will be inserted as "type" column. The length must be the same as the number of input files
     log:
         "logs/nextclade__merge_all_results.log",
     wrapper:
