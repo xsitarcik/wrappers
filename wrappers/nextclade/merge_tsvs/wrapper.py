@@ -31,7 +31,7 @@ def group_coverage_filter(group) -> list[int]:
     return list(results)
 
 
-def merge_nextclade_tsvs(files: list[str], output_tsv: str):
+def merge_nextclade_tsvs(files: list[str], names: list[str], output_tsv: str):
     parent_dir = os.path.dirname(output_tsv)
     if not os.path.exists(parent_dir):
         os.makedirs(parent_dir)
@@ -45,14 +45,14 @@ def merge_nextclade_tsvs(files: list[str], output_tsv: str):
     print(f"Processing {len(files)} files", file=sys.stderr)
     all_attributes = set()
     dataframes = []
-    for file in files:
+    for file, name in zip(files, names):
         if os.path.getsize(file) == 0:
             print(f"File {file} is empty. Continuing...", file=sys.stderr)
             continue
 
         df = pd.read_csv(file, sep="\t")
         if "type" not in df:
-            df["type"] = os.path.basename(os.path.dirname(os.path.dirname(os.path.dirname(file))))
+            df["type"] = name
 
         df["QC"] = df["coverage"].apply(lambda x: assign_pass(x))
 
@@ -109,5 +109,6 @@ if __name__ == "__main__":
     sys.stderr = open(snakemake.log[0], "w")
     merge_nextclade_tsvs(
         snakemake.input.nextclade_tsvs,
+        snakemake.params.names,
         snakemake.output.merged_tsv,
     )
