@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.2](https://github.com/xsitarcik/wrappers/compare/v1.13.1...v1.13.2) (2024-04-15)
+
+
+### Bug Fixes
+
+* allowed nextclade merge tsvs to have metadata type column ([7c60e84](https://github.com/xsitarcik/wrappers/commit/7c60e84582cf80378ad645af0e070f15acf31076))
+
 ## [1.13.1](https://github.com/xsitarcik/wrappers/compare/v1.13.0...v1.13.1) (2024-04-12)
 
 
