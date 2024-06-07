@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.5](https://github.com/xsitarcik/wrappers/compare/v1.13.4...v1.13.5) (2024-06-07)
+
+
+### Performance Improvements
+
+* autobump conda envs ([c691059](https://github.com/xsitarcik/wrappers/commit/c691059660e279afd228d02b631ffcb23afa410e))
+
 ## [1.13.4](https://github.com/xsitarcik/wrappers/compare/v1.13.3...v1.13.4) (2024-04-29)
 
 
